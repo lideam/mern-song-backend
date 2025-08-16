@@ -12,6 +12,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// ✅ Root route
+app.get("/", (req, res) => {
+  res.send("🎵 MERN Song Manager Backend is running!");
+});
+
+// API routes
 app.use("/songs", songRoutes);
 
 const PORT = process.env.PORT || 5000;
